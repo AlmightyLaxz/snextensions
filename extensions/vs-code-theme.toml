@@ -1,5 +1,5 @@
 id="io.github.hyphone.sn-theme-vscode"
-github= hyphone/sn-theme-vscode"
+github="hyphone/sn-theme-vscode"
 main="dist/dist.css"
 
 name="VS Code Theme"
@@ -11,6 +11,6 @@ thumbnail_url="https://github.com/hyphone/sn-theme-vscode/raw/master/screenshot.
 description="A theme for Standard Notes inspired by the VS Code Dark theme."
 [dock_icon]
   type="circle
-  background_color="'#252526'
-  foreground_color="'#D4D4D4'
-  border_color="'#7ba78a'
+  background_color="#252526"
+  foreground_color="#D4D4D4"
+  border_color="#7ba78a"
