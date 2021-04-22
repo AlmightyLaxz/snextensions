@@ -69,14 +69,17 @@ def main(base_url):
         # when extensions get updated. We'll have to handle them by git.
         # git clone --branch {version} --depth 1 {github_url}
         run(['git', 'clone', '--branch', ext['version'], '--depth', '1', 'https://github.com/{github}.git'.format(**ext)])
-        shutil.rmtree(os.path.join(public_dir, repo_name, '.git'))
+        if os.path.exists(os.path.join(public_dir, repo_name, '.git')):
+            shutil.rmtree(os.path.join(public_dir, repo_name, '.git'))
 
-        # Generate JSON file for each extension
-        with open(os.path.join(public_dir, repo_name, 'index.json'), 'w') as wf:
-            json.dump(extension, wf)
+            # Generate JSON file for each extension
+            with open(os.path.join(public_dir, repo_name, 'index.json'), 'w') as wf:
+                json.dump(extension, wf)
 
-        extensions.append(extension)
-        print('Loaded extension: {}'.format(ext['name']))
+            extensions.append(extension)
+            print('Loaded extension: {}'.format(ext['name']))
+        else:
+            print("FUCKFUCKFUCKFUCK - Extension {github} failed".format(**ext))
 
     os.chdir('..')
 
