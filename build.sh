@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 echo "Fetching extensions..."
-python build.py
+python3 build.py
 echo "Clean up..."
 cd public
 find -type f \
