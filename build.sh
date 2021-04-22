@@ -2,7 +2,9 @@
 echo "Fetching extensions..."
 python3 build.py
 echo "Clean up..."
+ls
 cd public
+ls
 find -type f \
     \( -name README.md \
        -o -name .babelrc \
@@ -12,6 +14,7 @@ find -type f \
 find -maxdepth 2 -type d -name src | xargs rm -rf
 find -maxdepth 2 -type d -name vendor | xargs rm -rf
 echo "Clean up finished."
+ls
 echo "Post building..."
 cp ../_headers ./
 echo "Build finished."
